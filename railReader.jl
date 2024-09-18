@@ -82,6 +82,7 @@ function gen_sparse_matrix_and_cost_vector_from_file(file_name::String)::Tuple{S
         set_id += 1
     end
     close(file)
-    return (sparse(sets_index_list, nodes_index_list, true, num_sets, num_nodes), cost_vector, num_nodes, num_sets)
+
+    return (sparse(nodes_index_list, sets_index_list, true, num_nodes, num_sets), cost_vector, num_nodes, num_sets)
 end
 
